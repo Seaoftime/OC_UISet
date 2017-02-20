@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>infoArray</key>
+		<array>
+			<dict>
+				<key>contentStt</key>
+				<string>很简单,假如有一个NSMutableString,现在用他给一个retain修饰 NSString赋值,那么只是将NSString指向了NSMutableString所指向的位置,并对NSMUtbaleString计数器加一,此时,如果对NSMutableString进行修改,也会导致NSString的值修改,原则上这是不允许的.  如果是copy修饰的NSString对象,在用NSMutableString给他赋值时,会进行深拷贝,及把内容也给拷贝了一份,两者指向不同的位置,即使改变了NSMutableString的值,NSString的值也不会改变.所以用copy是为了安全,防止NSMutableString赋值给NSString时,前者修改引起后者值变化而用的.</string>
+			</dict>
+		</array>
+		<key>titleStt</key>
+		<string>iOS string 为什么要用 copy</string>
+	</dict>
+	<dict>
+		<key>infoArray</key>
+		<array>
+			<dict>
+				<key>contentStt</key>
+				<string>在ios中并不是所有的对象都支持copy，mutableCopy，遵守NSCopying 协议的类可以发送copy消息，遵守NSMutableCopying 协议的类才可以发送mutableCopy消息。假如发送了一个没有遵守上诉两协议而发送 copy或者 mutableCopy,那么就会发生异常。但是默认的ios类并没有遵守这两个协议。如果想自定义一下copy 那么就必须遵守NSCopying,并且实现 copyWithZone: 方法，如果想自定义一下mutableCopy 那么就必须遵守NSMutableCopying,并且实现 mutableCopyWithZone: 方法。</string>
+			</dict>
+		</array>
+		<key>titleStt</key>
+		<string>iOS中深拷贝和浅拷贝</string>
+	</dict>
+</array>
+</plist>
